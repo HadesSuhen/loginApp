@@ -10,14 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+    }
+
+    @IBAction func didClicked(sender: UIButton) {
+        let userName = userNameTextField.text
+        let password = passwordTextField.text
+        
+        if userName == "admin" && password == "888888"{
+            titleLabel.text = "Login sucess!"
+        }else{
+            titleLabel.text = "userName or password error"
+        }
     }
 
 
